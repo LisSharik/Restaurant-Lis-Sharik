@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Kaushan+Script&display=swap');
+/* =============================================== */
+/* ESCRITORIO (XL revisamos en 1366px en adelante) */
+/* =============================================== */
+
+
+/* Estilos generales */
+:root{
+    --light: #eaeaea;
+    --primary: rgb(242, 178, 46);
+    --succes: #ffb84d;
+    --dark: #131313;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif;
+}
+body{
+    min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Header */
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 100;
+}
+
+.header .cont_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .cont_logo img{
+    height: 80px;
+}
+
+.header .cont_logo p{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+    color: var(--light);
+}
+.header .nav_bar a{
+    border: 2px solid var(--primary);
+    padding: 3px 10px;
+    border-radius: 10px;
+    color: var(--primary);
+    font-size: 20px;
+    margin-right: 10px;
+    transition: .5s all;
+}
+
+.header .nav_bar a:hover{
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+.nav_bar_mobile{
+    display: none;
+}
+
+
+/* banner */
+.banner{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(120deg,var(--dark) 60%, var(--succes) 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+.banner .banner_cont{
+    width: fit-content;
+}
+.banner .banner_cont h3{
+    font-size: 40px;
+    color: var(--light);
+}
+
+.banner .banner_cont h2{
+    font-size: 90px;
+    color: var(--light);
+}
+
+.banner .banner_cont p{
+    color: #9e9898;
+    font-size: 18px;
+    width: 600px;
+    margin-bottom: 40px;
+}
+
+.banner .banner_cont .btn_home{
+    background-color: #ff2e02;
+    padding: 10px 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--light);
+    font-size: 20px;
+    border: 2px solid #ff2e02;
+    transition: .2s;
+
+}
+
+.banner .banner_cont .btn_home:hover{
+    background: transparent;
+    color: #ff2e02;
+}
+
+.banner .banner_img img{
+    max-width: 700px;
+    width: 95%;
+    margin-top: 100px;
+    animation: animation_img_banner 20s linear infinite;
+}
+
+@keyframes animation_img_banner{
+
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+
+
+
+
+
+/* =============================================== */
+/* MOVILES (XL revisamos de 768px hacia abajo) */
+/* =============================================== */
+
+@media(max-width: 768px){
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--dark);
+    }
+    
+    
+    .header .nav_bar{
+        display: none;
+    }
+
+    .nav_bar_mobile{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary);
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 200;
+    }
+
+    .nav_bar_mobile a{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: var(--dark);
+        border: 2px solid var(--dark);
+        color: var(--primary);
+        font-size: 18px;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+    }
+
+    .nav_bar_mobile a:hover{
+        background-color: var(--primary);
+        color: var(--dark);
+    }
+
+    .banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 150px;
+        height: 100%;
+        gap: 0px;
+        overflow: hidden;
+    }
+    .banner .banner_cont{
+        width: 100%;
+        padding: 20px;
+
+    }
+
+    .banner .banner_cont h3{
+        font-size: 30px;
+        margin-top: 30;
+    }
+
+    .banner .banner_cont h2{
+        font-size: 50px;
+    }
+
+    .banner .banner_cont p{
+        width: auto;
+    }
+    .banner .banner_img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+
+
+
